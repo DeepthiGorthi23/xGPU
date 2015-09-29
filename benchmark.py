@@ -4,6 +4,8 @@ import csv
 import sys
 import subprocess as sub
 import os
+import argparse
+
 
 #np.genfromtxt('plotfile.txt',delimiter=',',names=['x','y'])
 ntime=2048
@@ -11,13 +13,8 @@ n_frequency = range(1,5)
 npipe=1024
 nstation = 352
 
-
-#if __name__ == '__main__':
-#	from optparse import OptionParser
-#	p = OptionParser()
-#	p.set_usage('benchmark.py [options]')
-#	p.set_description(__doc__)
-#	p.add_option('-i','--iterate', dest='iterate',type='string',default='nfrequency',help='')	
+parser = argparse.ArgumentParser()
+parser.add_argument("-i", help = 'Specify the variable to iterate over: nfrequency,ntime,ntime_pipe')
 
 
 
