@@ -7,7 +7,7 @@ import os
 import argparse
 
 
-#CHECKING MERGIN CAPABILITIES YO
+#Making changes to the limits on N_PIPE
 
 #np.genfromtxt('plotfile.txt',delimiter=',',names=['x','y'])
 ntime=2048
