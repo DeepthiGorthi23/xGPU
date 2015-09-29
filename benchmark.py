@@ -7,6 +7,8 @@ import os
 import argparse
 
 
+#CHECKING MERGIN CAPABILITIES YO
+
 #np.genfromtxt('plotfile.txt',delimiter=',',names=['x','y'])
 ntime=2048
 n_frequency = range(1,5)
