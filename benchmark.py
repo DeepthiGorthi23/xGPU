@@ -13,9 +13,9 @@ import argparse
 #Command line options
 parser = argparse.ArgumentParser()
 parser.add_argument('-i', dest = 'iterate', type=str, help = 'Specify the variable to iterate over: nfrequency,ntime or ntime_pipe')
-parser.add_argument('--ntime',dest= 'ntime',help = 'Specify the accumulation time',default=2048)
+parser.add_argument('--ntime',dest= 'ntime',help = 'Specify the accumulation time',default=16)
 parser.add_argument('--nfrequency',dest='nfrequency',help='Specify number of frequncy bins to use',default = 10)
-parser.add_argument('--ntime_pipe',dest='ntime_pipe',help='Specify the value for ntime_pipe',default = 1024)
+parser.add_argument('--ntime_pipe',dest='ntime_pipe',help='Specify the value for ntime_pipe',default = 8)
 parser.add_argument('--nstations',dest='nstations',help='Number of antennas',default=352)
 args = parser.parse_args()
 
@@ -47,7 +47,9 @@ if iterate=='nfrequency':
 		bw, error = p.communicate()
 		#p.communicate() returns the bw that cuda_correlator code outputs and 
 		BW.append(float(bw))
-	plt.plot(nfrequency,BW)
+	plt.plot(nfrequency,BW,'r')
+	plt.ylabel('Bandwidth per GPU')
+	plt.xlabel('nfrequency')
 	plt.show()
 
 #iterating over ntime
@@ -74,7 +76,9 @@ elif iterate=='ntime':
 	
 
 
-	plt.plot(ntime,BW)	
+	plt.plot(ntime,BW,'ro')	
+	plt.ylabel('Bandwidth per GPU')
+	plt.xlabel('nfrequency')
 	plt.show()
 
 elif iterate=='ntime_pipe':
@@ -98,7 +102,9 @@ elif iterate=='ntime_pipe':
 		#p.communicate() returns the bw that cuda_correlator code outputs and 
 		BW.append(float(bw))
 
-	plt.plot(ntime_pipe,BW)
+	plt.plot(ntime_pipe,BW,'b')
+	plt.ylabel('Bandwidth per GPU')
+	plt.xlabel('ntime_pipe')
 	plt.show()
 
 
