@@ -13,10 +13,10 @@ import argparse
 #Command line options
 parser = argparse.ArgumentParser()
 parser.add_argument('-i', dest = 'iterate', type=str, help = 'Specify the variable to iterate over: nfrequency,ntime or ntime_pipe')
-parser.add_argument('--ntime',dest= 'ntime',help = 'Specify the accumulation time',default=16)
-parser.add_argument('--nfrequency',dest='nfrequency',help='Specify number of frequncy bins to use',default = 10)
-parser.add_argument('--ntime_pipe',dest='ntime_pipe',help='Specify the value for ntime_pipe',default = 8)
-parser.add_argument('--nstations',dest='nstations',help='Number of antennas',default=352)
+parser.add_argument('--ntime',dest= 'ntime',help = 'Specify the accumulation time, default = 16',default=16)
+parser.add_argument('--nfrequency',dest='nfrequency',help='Specify number of frequncy bins to use, default = 10',default = 10)
+parser.add_argument('--ntime_pipe',dest='ntime_pipe',help='Specify the value for ntime_pipe, default = 8',default = 8)
+parser.add_argument('--nstations',dest='nstations',help='Number of antennas, default = 352',default=352)
 args = parser.parse_args()
 
 ntime = args.ntime
